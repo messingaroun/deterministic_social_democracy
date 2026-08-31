@@ -1,6 +1,6 @@
 # Simple workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
-
+- uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3
 on:
   # Runs on pushes targeting the default branch
   push:
