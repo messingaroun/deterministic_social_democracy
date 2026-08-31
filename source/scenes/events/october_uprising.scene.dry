@@ -4,7 +4,7 @@ subtitle: They claim it is time for the German Soviet...
 tags: event
 view-if: revolution_progress >= 10, month == 10
 max-visits: 1
-go-to: placeholder
+go-to: pres_backed if pres_ideology == "Left"; gov_response if spd_in_government; oppo_response if not spd_in_government
 tags: event
 
 = The October Revolt
@@ -13,8 +13,14 @@ Outraged by recent policy decisions, the KPD has mobilized the RFB and its suppo
 
 The situation is heating up, fast. Barricades are constructed, armed civilians patrol the streets, and isolated firefights have broken out across Berlin. We must do something about the situation.
 
-@placeholder
-view-if: 0 < 1
-subtitle: lorem ipsum
+@pres_backed
 
-lorem ipsum
+President
+
+@gov_response
+
+gov
+
+@oppo_response
+
+oppo
