@@ -114,6 +114,7 @@ if (window && d3) {
     d3.select("#reichstag").datum(data).call(parliament);
 }
 !}
+
 - @coalition-menu: Elect a leader
 
 = Election results
