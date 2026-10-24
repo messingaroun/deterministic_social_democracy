@@ -132,7 +132,7 @@ if (window && d3) {
 
 [? if neorevisionism == 1 : {!<tr><td><div class="box" style='background-color:#ff14a5'> </div> !}Neorevisionists: {!</td><td>!} [+ neorevisionist_c +]% {!</td><td>!} [+ str_change_neorevisionist +] {!</td></tr>!} ?]
 
-- @coalition-menu: Elect a leader
+- @coalition_menu: Elect a leader
 
 @coalition_menu
 
