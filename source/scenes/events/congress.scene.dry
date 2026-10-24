@@ -24,8 +24,8 @@ Q.neorevisionist_votes = neorevisionist_strength;
 Q.total_factions = Q[faction + '_votes']
 
 // Normalize to percentage
-    Q[faction + '_votes'] = Math.round((Q[faction + '_votes'] / total_factions) * 100);
-    console.log(`[${faction}] normalized vote %:`, Q[faction + '_votes']);
+Q[faction + '_votes'] = Math.round((Q[faction + '_votes'] / total_factions) * 100);
+console.log(`[${faction}] normalized vote %:`, Q[faction + '_votes']);
 !}
 
 - @post_congress: See the results
