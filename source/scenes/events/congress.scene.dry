@@ -33,9 +33,9 @@ for (var faction of Q.factions) {
 
 @post_congress
 on-arrival: {!
-Q.marxist_unity = Q.left_c+Q.center_c;
-Q.lassalean_unity = Q.reformist_c+Q.neorevisionist_c;
-Q.pragmatic_unity = Q.center_c+Q.reformist_c;
+Q.marxist_unity = Q.left_votes+Q.center_votes;
+Q.lassalean_unity = Q.reformist_votes+Q.neorevisionist_votes;
+Q.pragmatic_unity = Q.center_votes+Q.reformist_votes;
 !}
 on-display: {!
 if (!Q.neorevisionism) {
@@ -123,13 +123,13 @@ if (window && d3) {
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#9c0000'> </div> !} Left: {!</td><td>!} [+ left_c +]% {!</td><td>!} [+ str_change_left +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#9c0000'> </div> !} Left: {!</td><td>!} [+ left_votes +]% {!</td><td>!} [+ str_change_left +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#e30000'> </div> !} Center: {!</td><td>!} [+ center_c +]% {!</td><td>!} [+ str_change_center +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#e30000'> </div> !} Center: {!</td><td>!} [+ center_votes +]% {!</td><td>!} [+ str_change_center +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#ff681d'> </div> !} Labor: {!</td><td>!} [+ labor_c +]% {!</td><td>!} [+ str_change_labor +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#ff681d'> </div> !} Labor: {!</td><td>!} [+ laobr_votes +]% {!</td><td>!} [+ str_change_labor +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#ff6ba9'> </div> !} Reformists: {!</td><td>!} [+ reformist_c +]% {!</td><td>!} [+ str_change_reformist +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#ff6ba9'> </div> !} Reformists: {!</td><td>!} [+ reformst_votes +]% {!</td><td>!} [+ str_change_reformist +] {!</td></tr>!}
 
 [? if neorevisionism == 1 : {!<tr><td><div class="box" style='background-color:#ff14a5'> </div> !}Neorevisionists: {!</td><td>!} [+ neorevisionist_c +]% {!</td><td>!} [+ str_change_neorevisionist +] {!</td></tr>!} ?]
 
@@ -155,24 +155,24 @@ on-arrival: reformist_strength -= 5; neorevisionist_strength -= 5; labor_strengt
 Rudolf Breitscheid is elected as Chairman
 
 @left_majority  
-choose-if: left_c >= 50  
-subtitle: Kurt Rosenfeld is support by solely the Left ([+ left_c +]%)  
+choose-if: left_votes >= 50  
+subtitle: Kurt Rosenfeld is support by solely the Left ([+ left_votes +]%)  
 unavailable-subtitle: Kurt Rosenfeld lakcs a majority and endorses Breitscheid.
 on-arrival: left_strength += 10; reformist_dissent += 10; neorevisionist_dissent += 10; labor_dissent += 5; center_dissent += 5
 
 Kurt Rosenfeld wins in an upset.
 
 @center_majority  
-choose-if: center_c >= 50  
-subtitle: Center ([+ center_c +]%)  
+choose-if: center_votes >= 50  
+subtitle: Center ([+ center_votes +]%)  
 unavailable-subtitle: Lacking support, Hilferding endorses Wels.
 on-arrival: center_strength += 10; left_dissent += 5; reformist_dissent += 5; neorevisionist_dissent += 5; labor_dissent += 5
 
 Rudolf Hilferding is elevated from a theoretical to a practical role in the party.
 
 @reformist_majority  
-choose-if: reformist_c >= 50  
-subtitle: Reformists ([+ reformist_c +]%)  
+choose-if: reformst_votes >= 50  
+subtitle: Reformists ([+ reformst_votes +]%)  
 unavailable-subtitle: Otto Braun does not have enough support and endorses Severing.
 on-arrival: reformist_strength += 10; left_dissent += 10; center_dissent += 5; labor_dissent += 5
 
@@ -188,8 +188,8 @@ on-arrival: neorevisionist_strength += 10; left_dissent += 15; center_dissent +=
 Carlo Mierendorff wins, becoming leader of the party.
 
 @labor_majority  
-choose-if: labor_c >= 50  
-subtitle: Labor ([+ labor_c +]%)  
+choose-if: laobr_votes >= 50  
+subtitle: Labor ([+ laobr_votes +]%)  
 unavailable-subtitle: The majority of the party still does not believe Laborites should lead it.
 on-arrival: labor_strength += 10; center_dissent += 10; left_dissent += 5; reformist_dissent += 5
 
