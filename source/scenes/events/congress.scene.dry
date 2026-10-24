@@ -42,25 +42,25 @@ if (!Q.neorevisionism) {
         {   "id": "left",
             "legend": "Left",
             "name": "Left",
-            "seats": Math.round(Q.left_c*0.5),
+            "seats": Math.round(Q.left_votes),
         },
         {
             "id": "center",
             "legend": "Center",
             "name": "Center",
-            "seats": Math.round(Q.center_c*0.5),
+            "seats": Math.round(Q.center_votes),
         },
         {
             "id": "labor",
             "legend": "Labor",
             "name": "Labor",
-            "seats": Math.round(Q.labor_c*0.5),
+            "seats": Math.round(Q.labor_votes),
         },
         {
             "id": "reformist",
             "legend": "Reformists",
             "name": "Reformists",
-            "seats": Math.round(Q.reformist_c*0.5),
+            "seats": Math.round(Q.reformist_votes),
         },
 ];
 }
@@ -69,31 +69,31 @@ else {
         {   "id": "left",
             "legend": "Left",
             "name": "Left",
-            "seats": Math.round(Q.left_c*0.5),
+            "seats": Math.round(Q.left_votes),
         },
         {
             "id": "center",
             "legend": "Center",
             "name": "Center",
-            "seats": Math.round(Q.center_c*0.5),
+            "seats": Math.round(Q.center_votes),
         },
         {
             "id": "labor",
             "legend": "Labor",
             "name": "Labor",
-            "seats": Math.round(Q.labor_c*0.5),
+            "seats": Math.round(Q.labor_votes),
         },
         {
             "id": "reformist",
             "legend": "Reformists",
             "name": "Reformists",
-            "seats": Math.round(Q.reformist_c*0.5),
+            "seats": Math.round(Q.reformist_votes),
         },
         {
             "id": "neorevisionist",
             "legend": "Neorevisionists",
             "name": "Neorevisionists",
-            "seats": Math.round(Q.neorevisionist_c*0.5),
+            "seats": Math.round(Q.neorevisionist_votes),
         },
 ];
 }
