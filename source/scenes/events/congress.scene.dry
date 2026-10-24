@@ -115,8 +115,6 @@ if (window && d3) {
 }
 !}
 
-- @coalition-menu: Elect a leader
-
 = Election results
 
 {!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
@@ -133,6 +131,8 @@ if (window && d3) {
 {!<tr><td><div class="box" style='background-color:#ff6ba9'> </div> !} Reformists: {!</td><td>!} [+ reformist_c +]% {!</td><td>!} [+ str_change_reformist +] {!</td></tr>!}
 
 [? if neorevisionism == 1 : {!<tr><td><div class="box" style='background-color:#ff14a5'> </div> !}Neorevisionists: {!</td><td>!} [+ neorevisionist_c +]% {!</td><td>!} [+ str_change_neorevisionist +] {!</td></tr>!} ?]
+
+- @coalition-menu: Elect a leader
 
 @coalition_menu
 
