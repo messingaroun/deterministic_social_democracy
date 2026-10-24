@@ -28,7 +28,7 @@ Q.total_factions = Q[faction + '_votes']
     console.log(`[${faction}] normalized vote %:`, Q[faction + '_votes']);
 !}
 
-go-to: post_congress
+- @post_congress: See the results
 
 @post_congress
 on-arrival: {!
@@ -114,7 +114,7 @@ if (window && d3) {
     d3.select("#reichstag").datum(data).call(parliament);
 }
 !}
-go-to: coalition_menu
+- @coalition-menu: Elect a leader
 
 = Election results
 
