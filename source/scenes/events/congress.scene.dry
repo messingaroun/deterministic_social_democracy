@@ -1,8 +1,7 @@
 title: SPD Party Congress
 new-page: true
 tags: event
-priority: 1
-choose-if: year = 1928 and month = 2
+view-if: year = 1928 and month = 2
 set-jump: post_congress
 
 # the low priority means that this event is only seen after all other events are resolved for the month.
