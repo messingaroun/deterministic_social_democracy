@@ -32,48 +32,8 @@ go-to: post_congress
 
 @post_congress
 on-arrival: {!
-// set old results
-// election threshold constitutional reform
-// banning parties
-var new_faction_sum = 0;
-for (var faction of Q.factions) {
-    Q['old_' + faction + '_c'] = Q[faction + '_c'];
-    Q[faction + '_c'] = Q[faction + '_votes'];
-        // if we use decimals, then we might want to truncate the numbers
-    if (Q.use_decimals) {
-        Q[faction + '_c_disp'] = Q[faction+'_c'].toFixed(1);
-    }  else {
-            Q[faction + '_c_disp'] = Q[faction+'_c'];
-    }
-    Q['change_' + faction + '_c'] = Q[faction + '_c'] - Q['old_' + faction + '_c'];
-    var sign = Q['change_' + faction + '_c'] > 0 ? '+'  : '';
-    Q['str_change_' + faction] = sign + Q['change_' + faction + '_c'];//.toFixed(1);
-}
-// calculate new faction sum if electoral reform
-if (Q.electoral_threshold && Q.electoral_threshold > 0 || Q.faction_bans) {
-    for (var faction of Q.parties) {
-        if (Q[faction + '_c'] > 0) {
-            if (Q.use_decimals) {
-                Q[faction + '_c'] = Math.round(Q[faction + '_c']*1000/new_faction_sum)/10;
-            } else {
-                Q[faction + '_c'] = Math.round(Q[faction + '_c']*100/new_faction_sum);
-            }
-        }
-        if (Q.use_decimals) {
-            Q[faction + '_c_disp'] = Q[faction+'_c'].toFixed(1);
-        } else {
-            Q[faction + '_c_disp'] = Q[faction+'_c'];
-        }
-        Q['change_' + faction + '_c'] = Q[faction + '_c'] - Q['old_' + faction + '_c'];
-        var sign = Q['change_' + faction + '_c'] > 0 ? '+'  : '';
-        Q['str_change_' + faction] = sign + Q['change_' + faction + '_c'];//.toFixed(1);
-    }
-}
-
 Q.marxist_unity = Q.left_c+Q.center_c;
-Q.toleration_unity = Q.center_c+Q.reformist_c+Q.neorevisionist_c;
 Q.lassalean_unity = Q.reformist_c+Q.neorevisionist_c;
-Q.antitoleration_unity = Q.left_c+Q.labor_c;
 Q.pragmatic_unity = Q.center_c+Q.reformist_c;
 !}
 on-display: {!
